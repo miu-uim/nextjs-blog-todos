@@ -53,7 +53,8 @@ export async function getStaticPaths() {
 
 // getAllPostIdsによってparamsにidの情報が入っている
 export async function getStaticProps({ params }) {
-  const { post: post } = await getPostData(params.id);
+  // const { post: post } = await getPostData(params.id);
+  const post = await getPostData(params.id);
   return {
     props: {
       post,
